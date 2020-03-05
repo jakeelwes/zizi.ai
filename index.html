@@ -1,1 +1,66 @@
-zizi.ai
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The Zizi Project</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Lato:300&display=swap" rel="stylesheet">
+
+
+
+  <link rel="stylesheet" href="styles.css?v=1.0">
+
+</head>
+
+<body>
+  <!-- <div class="vimeo-wrapper">
+     <iframe src="https://player.vimeo.com/video/76979871?background=1&autoplay=1&loop=1&byline=0&title=0"
+             frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  </div> -->
+
+
+   <div class="fullscreen">
+   <div class="video">
+     <div class="wrapper">
+       <iframe src="//player.vimeo.com/video/388245510?autoplay=1&loop=1&title=0&byline=0&portrait=0" width="281" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allow="autoplay; fullscreen"></iframe>
+     </div>
+   </div>
+ </div>
+
+
+ <h1>THE ZIZI PROJECT<br>
+ <small><small>COMING SOON<br>
+  <small><small><a id=show target="_blank" href="">ARTIST WEBSITE</a>&nbsp;  |  &nbsp;<a id=show target="_blank" href="">INSTAGRAM</a></small></small></small></small></h1>
+
+
+
+ <script>
+
+   function videoSize() {
+  var $windowHeight = $(window).height();
+  var $videoHeight = $(".video").outerHeight();
+  var $scale = $windowHeight / $videoHeight;
+
+  if ($videoHeight <= $windowHeight) {
+    $(".video").css({
+      "-webkit-transform" : "scale("+$scale+") translateY(-50%)",
+      "transform" : "scale("+$scale+") translateY(-50%)"
+    });
+  };
+}
+
+$(window).on('load resize',function(){
+  videoSize();
+});
+
+</script>
+
+
+
+</body>
+</html>
