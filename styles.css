@@ -79,12 +79,12 @@ a {
 
 /* unvisited link */
 a:link {
-  color: #ccc;
+  color: #fff;
 }
 
 /* visited link */
 a:visited {
-  color: #ddd;
+  color: #fff;
 }
 
 /* mouse over link */
@@ -94,5 +94,5 @@ a:hover {
 
 /* selected link */
 a:active {
-  color: #ccc;
+  color: #fff;
 }
