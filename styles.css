@@ -20,7 +20,7 @@ div {
   display: block;
 	left: 0px;
 	overflow: hidden;
-	padding-bottom: 75%; /* 56.25% = 16:9. set ratio */
+	padding-bottom: 100%; /* 56.25% = 16:9. set ratio */
 	position: absolute;
 	top: 50%;
 	width: 100%;
@@ -59,7 +59,7 @@ body {
   background: #AA076B;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #61045F, #AA076B);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #61045F, #AA076B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-          
+
 }
 h1 {
   left: 50%;
