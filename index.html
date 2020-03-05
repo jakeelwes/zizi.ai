@@ -40,7 +40,7 @@
    <div class="fullscreen">
    <div class="video">
      <div class="wrapper">
-       <iframe src="//player.vimeo.com/video/388245510?autoplay=1&loop=1&muted=1?controls=0?title=0&byline=0&portrait=0&sidedock=0" width="281" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allow="autoplay; fullscreen"></iframe>
+       <iframe src="//player.vimeo.com/video/388245510?autoplay=1&loop=1&muted=1?controls=0" width="281" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allow="autoplay; fullscreen"></iframe>
 
 
      </div>
@@ -59,12 +59,12 @@
    function videoSize() {
   var $windowHeight = $(window).height();
   var $videoHeight = $(".video").outerHeight();
-  var $scale = $windowHeight / $videoHeight;
+  var $scale = $windowHeight / $videoHeight * 1.25;
 
   if ($videoHeight <= $windowHeight) {
     $(".video").css({
-      "-webkit-transform" : "scale("+$scale+") translateY(-50%)",
-      "transform" : "scale("+$scale+") translateY(-50%)"
+      "-webkit-transform" : "scale("+$scale+") translateY(-40%)",
+      "transform" : "scale("+$scale+") translateY(-40%)"
     });
   };
 }
