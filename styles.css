@@ -70,7 +70,12 @@ h1 {
   z-index: 1;
   -webkit-transform: translate3d(-50%,-50%,0);
   transform: translate3d(-50%,-50%,0);
-  text-shadow: 0px 0px 10px #000000,0px 0px 30px #000000;
+  text-shadow: 0px 0px 5px #3d0047,0px 0px 20px #782563,0px 0px 30px #2469a6,0px 0px 50px #000;
+  line-height:80%;
+}
+
+small {
+  line-height:10%;
 }
 
 a {
@@ -89,7 +94,7 @@ a:visited {
 
 /* mouse over link */
 a:hover {
-  color: #a4a;
+  color: #f296aa;
 }
 
 /* selected link */
