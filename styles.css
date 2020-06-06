@@ -104,3 +104,33 @@ a:hover {
 a:active {
   color: #fff;
 }
+
+
+
+
+/* Changes the style of the overall form */
+
+/* Styles the header text above the inputs */
+#mc_embed_signup h2 {
+    font-size: 18px;
+    margin: 0 0 20px;
+    color: #000000;
+    text-align: center;
+}
+
+/* Adds extra space around the input boxes */
+#mc_embed_signup .mc-field-group {
+    padding: 10px 0;
+}
+
+/* Styles the input boxes */
+#mc_embed_signup  input {
+    width: 200px;
+}
+
+/* Styles the subscribe button */
+#mc_embed_signup .button {
+    background-color: #61045F;
+    color: #ffffff;
+    margin: 0 auto;
+}
