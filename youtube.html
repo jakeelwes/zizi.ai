@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html>
   <body>
+    
+    
+
+     
+     
     <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
     <div id="player"></div>
-    <div>Current Time: <span id="time"></span></div>
+  
+
+     <div>Current Time: <span id="time"></span></div>
 
     <script>
       // 2. This code loads the IFrame Player API code asynchronously.
@@ -21,7 +28,7 @@
         player = new YT.Player('player', {
           height: '390',
           width: '640',
-          videoId: 'fTUO6GDk2T0',
+          videoId: 'Tu7HoGZaspo',
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
@@ -68,5 +75,25 @@
         player.stopVideo();
       }
     </script>
+    <br>
+    Official Youtbe API
+    https://www.labnol.org/internet/youtube-audio-player/26740/
+    <br>
+    Other method - extension
+    https://github.com/Ashish-Bansal/audio-only-youtube
+    
+    
+    
+    
+    <div data-video="Tu7HoGZaspo"
+            data-autoplay="1"
+            data-loop="1"
+            id="youtube-audio">
+     </div>
+     <script src="https://www.youtube.com/iframe_api"></script>
+     <script src="https://cdn.rawgit.com/labnol/files/master/yt.js"></script>
+     
+     
+     
   </body>
 </html>
