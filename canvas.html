@@ -2,7 +2,9 @@
 <html>
 <style>
     body {
-        background-color: blue;
+        background-image: url("curtainAlpha.png");
+        background-position: center;
+        height: 1000px
     }
 
     #buffer {
@@ -34,6 +36,7 @@
             buffer.height = dimensions.videoHeight;
             updateCanvas(ctx, bufferCtx, dimensions, this)
         })
+
     })
 
     function updateCanvas(ctx, bufferCtx, dimensions, video) {
