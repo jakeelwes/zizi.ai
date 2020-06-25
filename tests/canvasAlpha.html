@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<style>
+    body {
+        background-image: url("curtainAlpha.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: black;
+        height: 1000px
+    }
+
+    #buffer {
+        display: none;
+    }
+
+    #video {
+        opacity: 0;
+    }
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var video = document.getElementById("video")
+        var canvas = document.getElementById("canvas")
+        var buffer = document.getElementById("buffer")
+
+        var ctx = canvas.getContext("2d")
+        var bufferCtx = buffer.getContext("2d")
+
+        video.addEventListener("play", function() {
+            var dimensions = {
+                width: video.videoWidth,
+                outputHeight: video.videoHeight/2,
+                videoHeight: video.videoHeight
+            };
+            canvas.width = dimensions.width;
+            canvas.height = dimensions.outputHeight;
+            buffer.width = dimensions.width;
+            buffer.height = dimensions.videoHeight;
+            updateCanvas(ctx, bufferCtx, dimensions, this)
+        })
+
+    })
+
+    function updateCanvas(ctx, bufferCtx, dimensions, video) {
+        bufferCtx.drawImage(video, 0, 0)
+     
+        var frame = bufferCtx.getImageData(0, 0, dimensions.width, dimensions.outputHeight)
+        var alpha = bufferCtx.getImageData(0, dimensions.outputHeight, dimensions.width, dimensions.outputHeight)
+
+        var outputImageData = frame.data;
+        var alphaData = alpha.data;
+
+        for (var i = 3, len = outputImageData.length; i < len; i = i + 4) {
+            outputImageData[i] = alphaData[i-1]
+        }
+
+        ctx.putImageData(frame, 0, 0, 0, 0, dimensions.width, dimensions.outputHeight)
+        setTimeout(updateCanvas, 15, ctx, bufferCtx, dimensions, video)
+    }
+</script>
+
+<body>
+    <canvas id="buffer" width="100" height="100"></canvas>
+    <canvas id="canvas" width="100" height="100"></canvas>
+    <video autoplay loop playsinline muted id="video">
+        <source src="vertical-me.mov" type="video/mp4">
+    </video>
+    
+    <video autoplay loop playsinline muted id="video">
+        <source src="zizi-full.mov" type="video/mp4">
+    </video>
+</body>
+
+</html>
