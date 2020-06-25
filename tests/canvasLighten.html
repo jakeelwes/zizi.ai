@@ -89,17 +89,17 @@
 
 
     <script>
+    
     var videocontainer = document.getElementById('video');
     var videosource = document.getElementById('source_video');
     var newmp4 = 'openpose.mp4';
-     
+
+         
     var videobutton = document.getElementById("videolink1");
      
     videobutton.addEventListener("click", function(event) {
-        videocontainer.pause();
         videosource.setAttribute('src', newmp4);
         videocontainer.load();
-        videocontainer.play();
     }, false);
     </script>
   
