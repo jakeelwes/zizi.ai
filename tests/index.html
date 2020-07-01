@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="style.css?v=1.0">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Notable&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var video = document.getElementById("video")
+        var canvas = document.getElementById("canvas")
+        var buffer = document.getElementById("buffer")
+
+        var ctx = canvas.getContext("2d")
+        var bufferCtx = buffer.getContext("2d")
+
+
+        video.addEventListener("play", function() {
+            var dimensions = {
+                width: video.videoWidth,
+                outputHeight: video.videoHeight,
+                videoHeight: video.videoHeight
+            };
+            canvas.width = dimensions.width;
+            canvas.height = dimensions.outputHeight;
+            buffer.width = dimensions.width;
+            buffer.height = dimensions.videoHeight;
+            updateCanvas(ctx, bufferCtx, dimensions, this)
+        })
+
+    })
+
+    function updateCanvas(ctx, bufferCtx, dimensions, video) {
+        bufferCtx.drawImage(video, 0, 0)
+     
+        var frame = bufferCtx.getImageData(0, 0, dimensions.width, dimensions.outputHeight)
+        var alpha = bufferCtx.getImageData(0, dimensions.outputHeight, dimensions.width, dimensions.outputHeight)
+
+        ctx.putImageData(frame, 0, 0, 0, 0, dimensions.width, dimensions.outputHeight)
+        setTimeout(updateCanvas, 15, ctx, bufferCtx, dimensions, video)        
+
+    }
+</script>
+
+<body>
+  
+  <iframe src="silence.m4a" allow="autoplay" id="audio" style="display: none" id="iframeAudio"></iframe>
+  <h1>The Zizi Project <gr>| Online Cabaret - June prototype</gr></h1>
+  <p>Play music</p>
+
+  <audio id="playAudio" autoplay loop controls style=" width:150px;">
+    <source src="Willkommen.m4a" type="audio/mpeg">
+  </audio><br />
+  
+  <p><a href="#" id="videolink1">Full</a>  |  <a href="#" id="videolink2"> Skeleton</a></p>
+  <p><a href="#" id="videolink3">Close Up</a>  |  <a href="#" id="videolink4"> Skeleton</a></p>
+  <p style="color:#444;">Will all change (i.e): </p>
+  <p style="color:#444;">Next performer < > </p>
+<p style="color:#444;">Zoom = + </p>
+<p style="color:#444;">Realism/Training parameters < > </p>
+<p style="color:#444;">View performer profiles</p>
+<p style="color:#444;">etc...</p>
+  
+
+<!-- trigger autoplay -->
+
+  
+
+    <canvas id="buffer" width="100" height="100"></canvas>
+    <canvas id="canvas" width="100" height="100"></canvas>
+    
+    <video id="video" autoplay loop playsinline muted >
+        <source id="source_video" src="zizi-full.mp4" type="video/mp4">
+    </video>
+    
+
+
+    <script>
+    
+    var videocontainer = document.getElementById('video');
+    var videosource = document.getElementById('source_video');
+    var videobutton = document.getElementById("videolink1");
+    var videobutton2 = document.getElementById("videolink2");
+    var videobutton3 = document.getElementById("videolink3");
+    var videobutton4 = document.getElementById("videolink4");
+    
+    videobutton.addEventListener("click", function(event) {
+        videosource.setAttribute('src', 'zizi-full.mp4');
+        videocontainer.load();
+    }, false);
+    videobutton2.addEventListener("click", function(event) {
+        videosource.setAttribute('src', 'zizi-full-skeleton.mp4');
+        videocontainer.load();
+    }, false);
+    videobutton3.addEventListener("click", function(event) {
+        videosource.setAttribute('src', 'zizi-close.mp4');
+        videocontainer.load();
+    }, false);
+    videobutton4.addEventListener("click", function(event) {
+        videosource.setAttribute('src', 'zizi-close-skeleton.mp4');
+        videocontainer.load();
+    }, false);
+    
+    </script>
+  
+  
+  
+  
+    
+    <img src="curtainAlpha.png">
+
+</body>
+
+</html>

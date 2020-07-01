@@ -1,0 +1,81 @@
+body {
+    /* background-image: url("curtainAlpha.png");
+    background-position: center;
+    background-repeat: no-repeat; */
+    /* height: 1000px */
+    background-color: black;
+    color: white;
+    font-family: 'Righteous', cursive;
+
+    z-index:1;
+
+
+}
+
+h1 {
+  font-family: 'Notable', sans-serif;
+  padding-bottom: 8px;
+  border-bottom: 1px solid white;
+  text-transform: uppercase;
+  font-size: inherit;
+}
+
+h1 gr {
+  color: #777;
+}
+
+#buffer {
+    display: none;
+}
+
+#video {
+    opacity: 0;
+
+}
+
+canvas {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -300px; /* This is half the width */
+  margin-top: -300px; /* This is half the height */
+  z-index:-2;
+
+}
+
+img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -575px; /* This is half the width */
+  margin-top: -400px; /* This is half the height */
+  mix-blend-mode: lighten;
+  z-index:-1;
+
+}
+
+a {
+  text-decoration: none;
+
+}
+
+/* unvisited link */
+a:link {
+  color: #d98b6f;
+}
+
+/* visited link */
+a:visited {
+  color: #edb49f;
+}
+
+/* mouse over link */
+a:hover {
+  color: #d63a00;
+}
+
+/* selected link */
+a:active {
+  color: #fff;
+}
+
