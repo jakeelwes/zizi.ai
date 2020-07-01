@@ -14,6 +14,7 @@
          width: '640',
          videoId: 'dlEAM2EQci4',
          playsinline: '1',
+         playerVars: { 'autoplay': 1, 'autohide':1, 'playsinline':1},
          events: {
            'onReady': onPlayerReady,
            'onStateChange': onPlayerStateChange
