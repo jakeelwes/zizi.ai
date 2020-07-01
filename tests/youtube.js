@@ -8,7 +8,7 @@
      //    after the API code downloads.
      var player;
      var videotime = 0;
-     function onYouTubeIframeAPIReady() {
+     function onYouTubePlayerAPIReady() {
        player = new YT.Player('player', {
          height: '390',
          width: '640',
@@ -23,13 +23,13 @@
      // 4. The API will call this function when the video player is ready.
      function onPlayerReady(event) {
        //event.target.playVideo();
+       player.seekTo(13)
        document.getElementById('play').innerHTML = '<a href="#" onclick="play();">Play (from hidden YouTube)</a>';
        function updateTime() {
          var oldTime = videotime;
          if(player && player.getCurrentTime) {
            videotime = player.getCurrentTime();
 
-           console.log(videotime);
            document.getElementById("time").innerHTML = videotime.toFixed(2);
          }
        }
