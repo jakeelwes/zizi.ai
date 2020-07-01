@@ -13,6 +13,7 @@
          height: '390',
          width: '640',
          videoId: 'dlEAM2EQci4',
+         playsinline: '1',
          events: {
            'onReady': onPlayerReady,
            'onStateChange': onPlayerStateChange
