@@ -12,7 +12,7 @@
        player = new YT.Player('player', {
          height: '390',
          width: '640',
-         videoId: 'dlEAM2EQci4',
+         videoId: '0F28IYnEqKY',
          playsinline: '1',
          playerVars: { 'autoplay': 1, 'autohide':1, 'playsinline':1},
          events: {
@@ -25,7 +25,7 @@
      // 4. The API will call this function when the video player is ready.
      function onPlayerReady(event) {
        //event.target.playVideo();
-       player.seekTo(13)
+       player.seekTo(6.18)
        document.getElementById('play').innerHTML = '<a href="#" onclick="play();">Play (from hidden YouTube)</a>';
        function updateTime() {
          var oldTime = videotime;
