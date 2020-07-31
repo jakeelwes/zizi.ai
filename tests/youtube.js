@@ -26,7 +26,8 @@
      function onPlayerReady(event) {
        //event.target.playVideo();
        player.seekTo(6.18)
-       document.getElementById('play').innerHTML = '<a href="#" onclick="play();">Play (from hidden YouTube)</a>';
+       document.getElementById('play').innerHTML = 
+       '<a href="#" onclick="play();"><i class="fa fa-play fa-2x"></i></a>&nbsp;<a href="#" onclick="pause();"><i class="fa fa-pause fa-2x"></i></a>&nbsp;<i class="fa fa-volume-down fa-2x"></i>&nbsp;<i class="fa fa-volume-up fa-2x"></i>&nbsp<i class="fa fa-undo fa-2x"></i>';
        function updateTime() {
          var oldTime = videotime;
          if(player && player.getCurrentTime) {
@@ -42,6 +43,9 @@
 
      function play(){
        player.playVideo();
+     }
+     function pause(){
+       player.pauseVideo();
      }
 
      // 5. The API calls this function when the player's state changes.
