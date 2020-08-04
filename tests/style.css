@@ -28,9 +28,13 @@ h1 gr {
     display: none;
 }
 
-#video {
-    opacity: 0;
-
+video {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -500px; /* half the vid width */
+  margin-top: -500px; /* half the vid height */
+  z-index:-2;
 }
 
 canvas {
