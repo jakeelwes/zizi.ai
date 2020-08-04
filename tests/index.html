@@ -13,13 +13,10 @@
   
   
 
- <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+ <!-- youtube embedded video -->
  <div id="player" style="display: none"></div>
- <!-- <iframe id="player" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/dlEAM2EQci4?enablejsapi=1&playsinline=1&autoplay=1&origin=https://zizi.ai" frameborder="0" style="display: none"></iframe> -->
- <!-- <iframe id="player" style="display: none" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" width="640" height="390" src="https://www.youtube.com/embed/dlEAM2EQci4?enablejsapi=1&playsinline=1&autoplay=1&amp;widgetid=1"></iframe> -->
- <!-- need origin? -->
- 
- <!-- The Play-Link will appear in that div after the video was loaded -->
+
+ <!-- sound controls - loaded from youtube.js -->
  <div id="play"></div>
  
 
@@ -27,19 +24,15 @@
 
  <div><span id="time"></span></div>
 
- <!-- <script src="youtube.js"></script> -->
+ <script src="youtube.js"></script>
 
  <!-- swich between -close- and -full- -->
-  <i class="fa fa-search-minus fa-2x"></i>&nbsp;
-  <i class="fa fa-search-plus fa-2x"></i><br><br>
+  <a href="#" id="full"><i class="fa fa-search-minus fa-2x"></i></a>&nbsp;&nbsp;
+  <a href="#" id="close"><i class="fa fa-search-plus fa-2x"></i></a>
   
   <!-- swich between -zizi and -pose -->
-  <i class="fa fa-eye fa-2x"></i>&nbsp;
-  <i class="fa fa-eye-slash fa-2x"></i>
-
-  
-  <p><a href="#" id="videolink1">Full</a>  |  <a href="#" id="videolink2"> Skeleton</a></p>
-  <p><a href="#" id="videolink3">Close Up</a>  |  <a href="#" id="videolink4"> Skeleton</a></p>
+  <a href="#" id="pose"><i class="fa fa-eye-slash fa-2x"></i></a>&nbsp;&nbsp;
+  <a href="#" id="zizi"><i class="fa fa-eye fa-2x"></i></a>
   
   <!-- Will all change (i.e): </p>
   Select Act [+] </p>
@@ -66,26 +59,42 @@
     
     var videocontainer = document.getElementById('video');
     var videosource = document.getElementById('source_video');
-    var videobutton = document.getElementById("videolink1");
-    var videobutton2 = document.getElementById("videolink2");
-    var videobutton3 = document.getElementById("videolink3");
-    var videobutton4 = document.getElementById("videolink4");
+    var closeButton = document.getElementById("close");
+    var fullButton = document.getElementById("full");
+    var poseButton = document.getElementById("pose");
+    var ziziButton = document.getElementById("zizi");
     
-    videobutton.addEventListener("click", function(event) {
-        videosource.setAttribute('src', 'https://s3-eu-west-1.amazonaws.com/zizi.ai/development/me-full-zizi.mp4');
-        videocontainer.load();
+    var zoom = false
+    var pose = false
+    
+    function setURL(){
+      let zoomString = zoom ? "close" : "full"
+      let poseString = pose ? "pose" : "zizi"
+      
+      let URL = `https://s3-eu-west-1.amazonaws.com/zizi.ai/development/me-${zoomString}-${poseString}.mp4`
+      
+      videosource.setAttribute('src', URL);
+      
+      videocontainer.load();
+    }
+    
+    
+    
+    closeButton.addEventListener("click", function(event) {
+        zoom = true
+        setURL()
     }, false);
-    videobutton2.addEventListener("click", function(event) {
-        videosource.setAttribute('src', 'https://s3-eu-west-1.amazonaws.com/zizi.ai/development/me-full-pose.mp4');
-        videocontainer.load();
+    fullButton.addEventListener("click", function(event) {
+        zoom = false
+        setURL()
     }, false);
-    videobutton3.addEventListener("click", function(event) {
-        videosource.setAttribute('src', 'https://s3-eu-west-1.amazonaws.com/zizi.ai/development/me-close-zizi.mp4');
-        videocontainer.load();
+    poseButton.addEventListener("click", function(event) {
+        pose = true
+        setURL()
     }, false);
-    videobutton4.addEventListener("click", function(event) {
-        videosource.setAttribute('src', 'https://s3-eu-west-1.amazonaws.com/zizi.ai/development/me-close-pose.mp4');
-        videocontainer.load();
+    ziziButton.addEventListener("click", function(event) {
+        pose = false
+        setURL()
     }, false);
     
     </script>
