@@ -50,25 +50,7 @@
   <h1>Zizi - a virtual show <gr>| July prototype</gr></h1>
   
   
-  <!-- Youutbe Method 1 -->
-  <!-- <p><a href="#">Play music from Youtube</a></p>
-  <iframe id="youtube" width="2%" height="2%" src="//www.youtube.com/embed/dlEAM2EQci4?autoplay=0&showinfo=0&controls=0" frameborder="0" ></iframe>
-<script>
-  window.onload = function() {
-      var oFrame = document.getElementById("youtube");
-      oFrame.contentWindow.document.onclick = function() {
-          alert("frame contents clicked");
-      };
-  };
-  </script> -->
-  
-  <!-- Local Method -->
-  <!-- <iframe src="silence.m4a" allow="autoplay" id="audio" style="display: none" id="iframeAudio"></iframe> -->
 
-<!-- <audio id="playAudio" autoplay loop controls style=" width:150px;">
- <source src="Willkommen.m4a" type="audio/mpeg">
-</audio><br /> -->
-  
  <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
  <div id="player" style="display: none"></div>
  <!-- <iframe id="player" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/dlEAM2EQci4?enablejsapi=1&playsinline=1&autoplay=1&origin=https://zizi.ai" frameborder="0" style="display: none"></iframe> -->
@@ -128,19 +110,19 @@
     var videobutton4 = document.getElementById("videolink4");
     
     videobutton.addEventListener("click", function(event) {
-        videosource.setAttribute('src', 'vids/me-full-zizi.mp4');
+        videosource.setAttribute('src', 'https://s3-eu-west-1.amazonaws.com/zizi.ai/development/me-full-zizi.mp4');
         videocontainer.load();
     }, false);
     videobutton2.addEventListener("click", function(event) {
-        videosource.setAttribute('src', 'vids/me-full-pose.mp4');
+        videosource.setAttribute('src', 'https://s3-eu-west-1.amazonaws.com/zizi.ai/development/me-full-pose.mp4');
         videocontainer.load();
     }, false);
     videobutton3.addEventListener("click", function(event) {
-        videosource.setAttribute('src', 'vids/me-close-zizi.mp4');
+        videosource.setAttribute('src', 'https://s3-eu-west-1.amazonaws.com/zizi.ai/development/me-close-zizi.mp4');
         videocontainer.load();
     }, false);
     videobutton4.addEventListener("click", function(event) {
-        videosource.setAttribute('src', 'vids/me-close-pose.mp4');
+        videosource.setAttribute('src', 'https://s3-eu-west-1.amazonaws.com/zizi.ai/development/me-close-pose.mp4');
         videocontainer.load();
     }, false);
     
