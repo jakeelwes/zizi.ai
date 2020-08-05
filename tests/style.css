@@ -28,27 +28,59 @@ h1 gr {
     display: none;
 }
 
-video {
+#video {
   position: absolute;
   max-width: 100%;
   max-height: 100%;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);        
+  transform: translate(-50%, -50%);  
+  user-select: none;
+  
+  mix-blend-mode: lighten;
+  z-index:-1;
+}
+
+#shadowBehind {
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  user-select: none;
+  
+  filter:opacity(90%);
+  mix-blend-mode: multiply;    
+  z-index:-2;
+}
+
+#shadow2 {
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-40%, -45%);
+  user-select: none;
+
+  filter:opacity(70%);
+  mix-blend-mode: multiply;    
   z-index:-2;
 }
 
 
-img {
+#curtain {
   position: absolute;
+  /* go larger - 300%? */
   max-width: 150%;
   max-height: 150%;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);        
-  mix-blend-mode: lighten;
-  z-index:-1;
   user-select: none;
+  transform: translate(-50%, -50%);        
+  z-index:-3;
+  mix-blend-mode: lighten;    
 
 }
 

@@ -38,7 +38,7 @@
        }
        timeupdater = setInterval(updateTime, 40);
        
-       play();
+       pause();
      }
 
      function play(){

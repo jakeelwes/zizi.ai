@@ -51,19 +51,35 @@
 <!-- trigger autoplay -->
 
     
-    <video id="video" autoplay loop playsinline muted >
-        <source id="source_video" src="https://s3-eu-west-1.amazonaws.com/zizi.ai/development/roses-me-full.mp4" type="video/mp4">
-    </video>
+<img id="curtain" draggable="false" src="img/curtain-full.jpg">
+
+<video id="shadowBehind" autoplay loop playsinline muted >
+    <source id="shadowsource1" src="https://s3-eu-west-1.amazonaws.com/zizi.ai/development/roses-shadow-full.mp4" type="video/mp4">
+</video>
+
+<video id="shadow2" autoplay loop playsinline muted >
+    <source id="shadowsource2" src="https://s3-eu-west-1.amazonaws.com/zizi.ai/development/roses-shadow-full.mp4" type="video/mp4">
+</video>
+
+  <video id="video" autoplay loop playsinline muted >
+      <source id="source_video" src="https://s3-eu-west-1.amazonaws.com/zizi.ai/development/roses-me-full.mp4" type="video/mp4">
+  </video>
     
     
-    <img draggable="false" src="curtainAlpha.png">
 
 
 
     <script>
     
     var videocontainer = document.getElementById('video');
+    var shadow1 = document.getElementById('shadowBehind');
+    var shadow2 = document.getElementById('shadow2');
     var videosource = document.getElementById('source_video');
+    var shadowsource1 = document.getElementById('shadowsource1');
+    var shadowsource2 = document.getElementById('shadowsource2');
+    var curtain = document.getElementById('curtain');
+
+    
     var closeButton = document.getElementById("close");
     var fullButton = document.getElementById("full");
     var poseButton = document.getElementById("pose");
@@ -80,10 +96,19 @@
       let ziziString = pose ? "pose" : performer
       
       let URL = `https://s3-eu-west-1.amazonaws.com/zizi.ai/development/${act}-${ziziString}-${zoomString}.mp4`
-      
       videosource.setAttribute('src', URL);
       
+      let URL2 = `https://s3-eu-west-1.amazonaws.com/zizi.ai/development/${act}-shadow-${zoomString}.mp4`
+      shadowsource1.setAttribute('src', URL2);
+      shadowsource2.setAttribute('src', URL2);
+      
+      curtain.setAttribute('src', `img/curtain-${zoomString}.jpg`);
+      
       videocontainer.load();
+      shadow1.load();
+      shadow2.load();
+      curtain.load();
+
     }
     
     
