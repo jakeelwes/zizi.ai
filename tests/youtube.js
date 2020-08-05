@@ -27,7 +27,7 @@
        //event.target.playVideo();
        player.seekTo(6.18)
        document.getElementById('play').innerHTML = 
-       '<a href="#" onclick="play();"><i class="fa fa-play fa-2x"></i></a>&nbsp;<a href="#" onclick="pause();"><i class="fa fa-pause fa-2x"></i></a>&nbsp;<i class="fa fa-volume-down fa-2x"></i>&nbsp;<i class="fa fa-volume-up fa-2x"></i>&nbsp<i class="fa fa-undo fa-2x"></i>';
+       '<a href="#" onclick="play();"><i class="fa fa-play fa-2x"></i></a>&nbsp;<a href="#" onclick="pause();"><i class="fa fa-pause fa-2x"></i></a>&nbsp<i class="fa fa-volume-up fa-2x"></i>&nbsp<i class="fa fa-chevron-circle-left fa-2x"></i>&nbsp<i class="fa fa-chevron-circle-right fa-2x"></i>&nbsp<i class="fa fa-step-forward fa-2x"></i>';
        function updateTime() {
          var oldTime = videotime;
          if(player && player.getCurrentTime) {

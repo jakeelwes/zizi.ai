@@ -10,6 +10,7 @@
 <link rel="preload" as="video" href="https://s3-eu-west-1.amazonaws.com/zizi.ai/development/roses-me-close.mp4">
 <link rel="preload" as="video" href="https://s3-eu-west-1.amazonaws.com/zizi.ai/development/roses-pose-full.mp4">
 <link rel="preload" as="video" href="https://s3-eu-west-1.amazonaws.com/zizi.ai/development/roses-pose-close.mp4">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <script src="https://use.fontawesome.com/164223e5ef.js"></script>
 
 <body>
@@ -32,8 +33,10 @@
  <script src="youtube.js"></script>
 
  <!-- swich between -close- and -full- -->
+ <br>
   <a href="#" id="full"><i class="fa fa-search-minus fa-2x"></i></a>&nbsp;&nbsp;
   <a href="#" id="close"><i class="fa fa-search-plus fa-2x"></i></a>
+  <br><br>
   
   <!-- swich between -zizi and -pose -->
   <a href="#" id="pose"><i class="fa fa-eye-slash fa-2x"></i></a>&nbsp;&nbsp;
@@ -103,6 +106,18 @@
       shadowsource2.setAttribute('src', URL2);
       
       curtain.setAttribute('src', `img/curtain-${zoomString}.jpg`);
+      
+      if (pose) {
+        shadow1.style.display = "none";
+        if (zoom) {
+          shadow2.style.display = "none";
+        } else {
+          shadow2.style.display = "block";
+        }
+      } else {
+        shadow1.style.display = "block";
+        shadow2.style.display = "block";
+      }
       
       videocontainer.load();
       shadow1.load();
