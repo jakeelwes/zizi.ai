@@ -63,8 +63,7 @@ h1 gr {
   user-select: none;
   
   filter:opacity(90%);
-  mix-blend-mode: multiply;    
-  z-index:-2;
+
 }
 
 #shadow2 {
@@ -77,8 +76,7 @@ h1 gr {
   user-select: none;
 
   filter:opacity(70%);
-  mix-blend-mode: multiply;    
-  z-index:-2;
+
 }
 
 
@@ -92,7 +90,6 @@ h1 gr {
   top: 50%;
   user-select: none;
   transform: translate(-50%, -50%);        
-  z-index:-3;
 
 }
 
