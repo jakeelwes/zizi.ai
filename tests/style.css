@@ -90,6 +90,7 @@ h1 gr {
   top: 50%;
   user-select: none;
   transform: translate(-50%, -50%);        
+  z-index:-3;
 
 }
 
