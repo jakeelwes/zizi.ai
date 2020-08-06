@@ -28,6 +28,7 @@ h1 gr {
     display: none;
 }
 
+
 #video {
   position: absolute;
   max-width: 100%;
@@ -39,6 +40,17 @@ h1 gr {
   
   mix-blend-mode: lighten;
   z-index:-1;
+}
+
+#cc {
+  mix-blend-mode: multiply;    
+  z-index:-2;
+
+}
+#zz {
+  mix-blend-mode: lighten;    
+  z-index:-1;
+
 }
 
 #shadowBehind {
@@ -70,6 +82,7 @@ h1 gr {
 }
 
 
+
 #curtain {
   position: absolute;
   /* go larger - 300%? */
@@ -80,7 +93,6 @@ h1 gr {
   user-select: none;
   transform: translate(-50%, -50%);        
   z-index:-3;
-  mix-blend-mode: lighten;    
 
 }
 
