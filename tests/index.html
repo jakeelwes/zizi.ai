@@ -6,11 +6,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Notable&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
 
-<link rel="preload" as="video" href="https://s3-eu-west-1.amazonaws.com/zizi.ai/development/me-full-zizi.mp4">
-<link rel="preload" as="video" href="https://s3-eu-west-1.amazonaws.com/zizi.ai/development/me-close-zizi.mp4">
-<link rel="preload" as="video" href="https://s3-eu-west-1.amazonaws.com/zizi.ai/development/me-full-pose.mp4">
-<link rel="preload" as="video" href="https://s3-eu-west-1.amazonaws.com/zizi.ai/development/me-close-pose.mp4">
-<script src="https://use.fontawesome.com/164223e5ef.js"></script>
+<link rel="preload" as="video" href="https://s3-eu-west-1.amazonaws.com/zizi.ai/development/roses-me-full.mp4">
+<link rel="preload" as="video" href="https://s3-eu-west-1.amazonaws.com/zizi.ai/development/roses-me-close.mp4">
+<link rel="preload" as="video" href="https://s3-eu-west-1.amazonaws.com/zizi.ai/development/roses-pose-full.mp4">
+<link rel="preload" as="video" href="https://s3-eu-west-1.amazonaws.com/zizi.ai/development/roses-pose-close.mp4">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
 <body>
   
@@ -32,12 +32,16 @@
  <script src="youtube.js"></script>
 
  <!-- swich between -close- and -full- -->
+ <br>
   <a href="#" id="full"><i class="fa fa-search-minus fa-2x"></i></a>&nbsp;&nbsp;
   <a href="#" id="close"><i class="fa fa-search-plus fa-2x"></i></a>
+  <br><br>
   
   <!-- swich between -zizi and -pose -->
   <a href="#" id="pose"><i class="fa fa-eye-slash fa-2x"></i></a>&nbsp;&nbsp;
   <a href="#" id="zizi"><i class="fa fa-eye fa-2x"></i></a>
+  
+  <br><br>
   
   <!-- Will all change (i.e): </p>
   Select Act [+] </p>
@@ -50,20 +54,44 @@
 
 <!-- trigger autoplay -->
 
-  
+<img src="https://img.icons8.com/ios/50/000000/replay-10.png"/>
+<!-- Jus download local? Meant to link to <a href="https://icons8.com/icon/52193/replay-10">Replay 10 icon by Icons8</a> -->
 
-    <canvas id="buffer" width="100" height="100"></canvas>
-    <canvas id="canvas" width="100" height="100"></canvas>
     
-    <video id="video" autoplay loop playsinline muted >
-        <source id="source_video" src="https://s3-eu-west-1.amazonaws.com/zizi.ai/development/me-full-zizi.mp4" type="video/mp4">
-    </video>
+<img id="curtain" draggable="false" src="img/curtain-full.jpg">
+
+<div id="cc">
+<video id="shadowBehind" autoplay loop playsinline muted >
+    <source id="shadowsource1" src="https://s3-eu-west-1.amazonaws.com/zizi.ai/development/roses-shadow-full.mp4" type="video/mp4">
+</video>
+
+
+<video id="shadow2" autoplay loop playsinline muted >
+    <source id="shadowsource2" src="https://s3-eu-west-1.amazonaws.com/zizi.ai/development/roses-shadow-full.mp4" type="video/mp4">
+</video>
+</div>
+
+<div id="zz">
+  <video id="video" autoplay loop playsinline muted >
+      <source id="source_video" src="https://s3-eu-west-1.amazonaws.com/zizi.ai/development/roses-me-full.mp4" type="video/mp4">
+  </video>
+</div>
+    
+    
+
 
 
     <script>
     
     var videocontainer = document.getElementById('video');
+    var shadow1 = document.getElementById('shadowBehind');
+    var shadow2 = document.getElementById('shadow2');
     var videosource = document.getElementById('source_video');
+    var shadowsource1 = document.getElementById('shadowsource1');
+    var shadowsource2 = document.getElementById('shadowsource2');
+    var curtain = document.getElementById('curtain');
+
+    
     var closeButton = document.getElementById("close");
     var fullButton = document.getElementById("full");
     var poseButton = document.getElementById("pose");
@@ -71,16 +99,40 @@
     
     var zoom = false
     var pose = false
+
+    var act = "roses"
+    var performer = "me"
     
     function setURL(){
       let zoomString = zoom ? "close" : "full"
-      let poseString = pose ? "pose" : "zizi"
+      let ziziString = pose ? "pose" : performer
       
-      let URL = `https://s3-eu-west-1.amazonaws.com/zizi.ai/development/me-${zoomString}-${poseString}.mp4`
-      
+      let URL = `https://s3-eu-west-1.amazonaws.com/zizi.ai/development/${act}-${ziziString}-${zoomString}.mp4`
       videosource.setAttribute('src', URL);
       
+      let URL2 = `https://s3-eu-west-1.amazonaws.com/zizi.ai/development/${act}-shadow-${zoomString}.mp4`
+      shadowsource1.setAttribute('src', URL2);
+      shadowsource2.setAttribute('src', URL2);
+      
+      curtain.setAttribute('src', `img/curtain-${zoomString}.jpg`);
+      
+      if (pose) {
+        shadow1.style.display = "none";
+        if (zoom) {
+          shadow2.style.display = "none";
+        } else {
+          shadow2.style.display = "block";
+        }
+      } else {
+        shadow1.style.display = "block";
+        shadow2.style.display = "block";
+      }
+      
       videocontainer.load();
+      shadow1.load();
+      shadow2.load();
+      curtain.load();
+
     }
     
     
@@ -88,27 +140,26 @@
     closeButton.addEventListener("click", function(event) {
         zoom = true
         setURL()
+        // fullButton.style.color = "#555"
     }, false);
     fullButton.addEventListener("click", function(event) {
         zoom = false
         setURL()
+        // closeButton.style.color = "#555"
     }, false);
     poseButton.addEventListener("click", function(event) {
         pose = true
         setURL()
+        // ziziButton.style.color = "#555"
     }, false);
     ziziButton.addEventListener("click", function(event) {
         pose = false
         setURL()
+        // poseButton.style.color = "#555"
     }, false);
     
     </script>
   
-  
-  
-  
-    
-    <img src="curtainAlpha.png">
 
 </body>
 
