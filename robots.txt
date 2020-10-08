@@ -1,0 +1,7 @@
+User-agent: * 
+Disallow: /build/
+
+User-agent: *
+Allow: /
+
+Sitemap: http://zizi.ai/sitemap.xml
