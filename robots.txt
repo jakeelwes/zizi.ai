@@ -1,7 +1,3 @@
-User-agent: * 
-Disallow: /build/
-
+# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Allow: /
-
-Sitemap: http://zizi.ai/sitemap.xml
+Disallow:
