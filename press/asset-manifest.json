@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/press/static/css/main.998a2d7e.chunk.css",
+    "main.js": "/press/static/js/main.efe7caad.chunk.js",
+    "main.js.map": "/press/static/js/main.efe7caad.chunk.js.map",
+    "runtime-main.js": "/press/static/js/runtime-main.95bd6aea.js",
+    "runtime-main.js.map": "/press/static/js/runtime-main.95bd6aea.js.map",
+    "static/js/2.f808140b.chunk.js": "/press/static/js/2.f808140b.chunk.js",
+    "static/js/2.f808140b.chunk.js.map": "/press/static/js/2.f808140b.chunk.js.map",
+    "index.html": "/press/index.html",
+    "precache-manifest.1b3a084c69ee3cc7031b984b52dba590.js": "/press/precache-manifest.1b3a084c69ee3cc7031b984b52dba590.js",
+    "service-worker.js": "/press/service-worker.js",
+    "static/css/main.998a2d7e.chunk.css.map": "/press/static/css/main.998a2d7e.chunk.css.map",
+    "static/js/2.f808140b.chunk.js.LICENSE.txt": "/press/static/js/2.f808140b.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/press/static/media/market_deco.b40a88ee.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.95bd6aea.js",
+    "static/js/2.f808140b.chunk.js",
+    "static/css/main.998a2d7e.chunk.css",
+    "static/js/main.efe7caad.chunk.js"
+  ]
+}
