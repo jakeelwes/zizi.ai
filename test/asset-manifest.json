@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/test/static/css/main.d8899410.chunk.css",
+    "main.js": "/test/static/js/main.d1546f0d.chunk.js",
+    "main.js.map": "/test/static/js/main.d1546f0d.chunk.js.map",
+    "runtime-main.js": "/test/static/js/runtime-main.420c6a44.js",
+    "runtime-main.js.map": "/test/static/js/runtime-main.420c6a44.js.map",
+    "static/js/2.7e152fa4.chunk.js": "/test/static/js/2.7e152fa4.chunk.js",
+    "static/js/2.7e152fa4.chunk.js.map": "/test/static/js/2.7e152fa4.chunk.js.map",
+    "index.html": "/test/index.html",
+    "precache-manifest.bc44bef10e0d1cc218fbdbc1dbac1ffe.js": "/test/precache-manifest.bc44bef10e0d1cc218fbdbc1dbac1ffe.js",
+    "service-worker.js": "/test/service-worker.js",
+    "static/css/main.d8899410.chunk.css.map": "/test/static/css/main.d8899410.chunk.css.map",
+    "static/js/2.7e152fa4.chunk.js.LICENSE.txt": "/test/static/js/2.7e152fa4.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/test/static/media/market_deco.b40a88ee.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.420c6a44.js",
+    "static/js/2.7e152fa4.chunk.js",
+    "static/css/main.d8899410.chunk.css",
+    "static/js/main.d1546f0d.chunk.js"
+  ]
+}
