@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "./static/css/main.b725674e.chunk.css",
+    "main.css": "./static/css/main.00355868.chunk.css",
     "main.js": "./static/js/main.74a4e95b.chunk.js",
     "main.js.map": "./static/js/main.74a4e95b.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.1312b865.js",
@@ -8,14 +8,14 @@
     "static/js/2.32e5ab22.chunk.js": "./static/js/2.32e5ab22.chunk.js",
     "static/js/2.32e5ab22.chunk.js.map": "./static/js/2.32e5ab22.chunk.js.map",
     "index.html": "./index.html",
-    "static/css/main.b725674e.chunk.css.map": "./static/css/main.b725674e.chunk.css.map",
+    "static/css/main.00355868.chunk.css.map": "./static/css/main.00355868.chunk.css.map",
     "static/js/2.32e5ab22.chunk.js.LICENSE.txt": "./static/js/2.32e5ab22.chunk.js.LICENSE.txt",
     "static/media/App.css": "./static/media/market_deco.81315f1a.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.1312b865.js",
     "static/js/2.32e5ab22.chunk.js",
-    "static/css/main.b725674e.chunk.css",
+    "static/css/main.00355868.chunk.css",
     "static/js/main.74a4e95b.chunk.js"
   ]
 }
